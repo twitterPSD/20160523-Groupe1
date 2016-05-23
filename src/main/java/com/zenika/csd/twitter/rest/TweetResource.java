@@ -9,8 +9,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.zenika.csd.twitter.model.Author;
 import com.zenika.csd.twitter.model.Tweet;
 import com.zenika.csd.twitter.repository.TweetRepository;
+import com.zenika.csd.twitter.service.AuthorService;
 
 @RestController
 @RequestMapping("/tweet")
@@ -19,14 +21,22 @@ public class TweetResource {
 	@Autowired
 	private TweetRepository tweetService;
 
+	@Autowired
+	private AuthorService authorService;
+
 	@RequestMapping(method = RequestMethod.GET)
-	public List<Tweet> findAuthors() {
+	public List<Tweet> findTweets() {
 		return tweetService.findAll();
 	}
 
 	@RequestMapping(method = RequestMethod.POST)
-	public Tweet addTweet(@RequestBody Tweet tweet) {
+	public Tweet addTweet(@RequestBody String message) {
+		Tweet tweet = new Tweet();
 		tweet.setId(null);
+		tweet.setMessage(message);
+		// TODO comment on passe l'author en paramètre ? + message erreur si author inconnu
+		Author author = authorService.get(1);
+		tweet.setAuthor(author);
 		return tweetService.save(tweet);
 	}
 

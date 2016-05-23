@@ -12,4 +12,6 @@ public interface AuthorService {
 
 	void delete(Integer id);
 	
+	Author get(Integer id);
+	
 }
