@@ -24,6 +24,10 @@
         	url:'/author',
         	templateUrl:'app/author/author.html'
         })
+        .state('tweet',{
+        	url:'/tweet',
+        	templateUrl:'app/tweet/tweet.html'
+        })
         ;
     }
 })();
