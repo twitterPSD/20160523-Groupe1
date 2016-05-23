@@ -25,6 +25,7 @@ public class TwitterApplication {
             env.getProperty("server.port"),
             InetAddress.getLocalHost().getHostAddress(),
             env.getProperty("server.port"));
+		log.info("Test Comit Réussi.");
 	}
 
 }
