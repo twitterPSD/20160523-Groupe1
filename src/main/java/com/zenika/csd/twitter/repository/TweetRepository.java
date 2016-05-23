@@ -7,5 +7,4 @@ import com.zenika.csd.twitter.model.Tweet;
 
 public interface TweetRepository extends JpaRepository<Tweet, Integer> {
 
-
 }

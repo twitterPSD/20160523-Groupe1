@@ -32,7 +32,7 @@ public class TweetServiceImpl implements TweetService {
 
 	@Override
 	public Tweet save(Tweet tweet) {
-		log.debug("Request to save Author : {}", tweet);
+		log.debug("Request to save tweet : {}", tweet);
 		Tweet savedtweet = tweetRepository.saveAndFlush(tweet);
 		return savedtweet;
 	}
