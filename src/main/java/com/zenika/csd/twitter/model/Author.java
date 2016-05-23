@@ -1,10 +1,15 @@
 package com.zenika.csd.twitter.model;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Author {
@@ -21,6 +26,13 @@ public class Author {
 	
 	@Column
 	private String email;
+	
+	/**
+	 * TODO : changer eager en lazy
+	 */
+	@Column
+	@OneToMany(mappedBy="author", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	List<Tweet> tweets;
 
 	public String getFirstname() {
 		return firstname;
@@ -54,4 +66,12 @@ public class Author {
 		this.id = id;
 	}
 
+	public List<Tweet> getTweets() {
+		return tweets;
+	}
+
+	public void setTweets(List<Tweet> tweets) {
+		this.tweets = tweets;
+	}
+	
 }

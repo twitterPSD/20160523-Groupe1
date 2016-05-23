@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 
 @Entity
@@ -20,6 +21,12 @@ public class Tweet {
 	 */
 	@Column
 	private String message;
+	
+	/**
+	 * auteur du tweet
+	 */
+	@ManyToOne
+	private Author author;
 
 	
 	public Integer getId() {
@@ -37,5 +44,12 @@ public class Tweet {
 	public void setMessage(String message) {
 		this.message = message;
 	}
-	
+
+	public Author getAuthor() {
+		return author;
+	}
+
+	public void setAuthor(Author author) {
+		this.author = author;
+	}
 }
