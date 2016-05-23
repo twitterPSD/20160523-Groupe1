@@ -1,0 +1,15 @@
+<div class="container" ng-controller="ItemController">
+      <div class="page-header">
+        <h2>Ecrire un tweet</h2>
+      </div>
+      <form class="form-horizontal" role="form" ng-submit="addTweet(newTweet)">
+          <textarea class="form-control" ng-model="newTweet" placeholder="Saisir un tweet..." >
+          </textarea>
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="submit" ng-disabled="!newTweet" title="Ajouter">
+              <span class="glyphicon glyphicon-plus"></span>
+            </button>
+          </span>
+        </div>
+      </form>
+</div>
