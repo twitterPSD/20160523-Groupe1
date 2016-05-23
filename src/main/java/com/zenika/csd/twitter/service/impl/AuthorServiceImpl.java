@@ -38,7 +38,7 @@ public class AuthorServiceImpl implements AuthorService {
 
 	@Override
 	public void delete(Integer id) {
-		log.debug("Request to delete Author id : {}", id);
+		log.debug("test Request to delete Author id : {}", id);
 		authorRepository.delete(id);
 	}
 
