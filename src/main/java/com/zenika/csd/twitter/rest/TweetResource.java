@@ -9,10 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.zenika.csd.twitter.model.Author;
 import com.zenika.csd.twitter.model.Tweet;
 import com.zenika.csd.twitter.repository.TweetRepository;
-import com.zenika.csd.twitter.service.AuthorService;
 
 @RestController
 @RequestMapping("/tweet")
